@@ -1,17 +1,19 @@
 import React from 'react'
-import img1 from '../assets/images/left-section.jpg'
+import img1 from '../assets/Student.gif'
+import Navbar from '../Pages/Navbar'
 
 function Signup() {
 
     
     return (
-        <div className='min-h-screen py-40 bg-gradient-to-r from-indigo-500 ...'>
-            <div className='mx-auto'>
+        <div className='min-h-screen bg-light-pink'>
+        <Navbar/>
+            <div className='mx-auto mt-12'>
                 <div className=' flex-col lg:flex-row w-10/12 lg:w-8/12 flex  bg-white rounded-xl mx-auto shadow-2xl overflow-hidden'>
                     <div className='lg:w-1/2 flex flex-col items-center justify-center p-12 bg-[image:var(--image-url)] bg-no-repeat bg-cover' style={{ '--image-url': `url(${img1})` }}>
-                       <h1 className='text-white text-3xl mb-3'> Welcome</h1>
+                       {/* <h1 className='text-white text-3xl mb-3'> Welcome</h1> */}
                        <div>
-                       <p className='text-white'>In this video, I will show you how to setup a Tailwindcss project via Vite. Then, I will design a registration page or a signup page with Tailwind CSS classes. I have designed a registration form on FIgma and attached the Figma file here. You  can download it and open it on your local </p>
+                       {/* <p className='text-white'>In this video, I will show you how to setup a Tailwindcss project via Vite. Then, I will design a registration page or a signup page with Tailwind CSS classes. I have designed a registration form on FIgma and attached the Figma file here. You  can download it and open it on your local </p> */}
                        </div>
                       
                     </div>
@@ -36,10 +38,10 @@ function Signup() {
                     </div>
                     <div className='mt-5'>
                         <input type='checkbox' className='border border-gray-500'/>
-                        <span> I accept the <span className='text-purple-400'>terms of use </span>  & <span className='text-purple-400'>Privacy Policy</span></span>
+                        <span> I accept the <span className='text-purple'>terms of use </span>  & <span className='text-purple'>Privacy Policy</span></span>
                     </div>
                     <div className='mt-5'>
-                        <button className='w-full bg-purple-300 hover:bg-purple-500 py-3 text-center rounded-md text-white'>Register Now</button>
+                        <button className='w-full bg-grey hover:bg-black py-3 text-center rounded-md text-white'>Register Now</button>
                     </div>
                     </form>
                     </div>

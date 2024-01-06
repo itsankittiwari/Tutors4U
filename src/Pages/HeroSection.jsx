@@ -64,12 +64,6 @@ function HeroSection() {
                     <div className="h-1 w-11 bg-black"></div>
                     <p className="text-[18px] leading-5"> Earn money sharing your expert knowledge with students. Sign up for start tutoring online with Tutors4U.</p>
 
-                    {/* <p className="text-[18px] leading-7">Accept Payments from customer.
-                        Automate payouts to vendors & employees. Never run out of working capital.</p>
-
-                    <p className="text-[18px] leading-7">Accept Payments from customer.
-                        Automate payouts to vendors & employees. Never run out of working capital.</p> */}
-
                     <ul className='list-disc ml-5 text-xl font-semibold'>
                         <li>Find new students</li>
                         <li>Grow your business</li>

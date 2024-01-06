@@ -12,14 +12,14 @@ function Card() {
     {
         no: `2`,
         img: `/Images/download.jpg`,
-        quote:'or batao bachho',
+        quote:'Start learning.',
         color:'yellow',
         review: `We’ll connect you with a tutor who will motivate, challenge, and inspire you.`
     },
     {
         no: `3`,
         img: `/Images/img1.png`,
-        quote:'sab milega yaha',
+        quote:'Speak. Read. Write. Repeat.',
         color:'purple',
         review: `The best choice for learning any thing is to do pratice.`
     }

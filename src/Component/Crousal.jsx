@@ -1,20 +1,7 @@
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 import React, { Component } from "react";
-// import img3 from '../assets/hero.webp';
 
-function SampleArrow(props) {
-    const { className, style,onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "black", color:"black",fontSize:"10px" }}
-       
-        onClick={onClick}
-      />
-    );
-  }
 
 function Crousal() {
     const data = [
@@ -51,37 +38,36 @@ function Crousal() {
         // Add other data objects here...
     ];
     
-    const settings = {
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        nextArrow: <SampleArrow />,
-        prevArrow: <SampleArrow />,
-        responsive: [
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                initialSlide: 2
-              }
-            },
-            {
-              breakpoint: 480,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-              }
-            }
-          ]
-      };
+    const responsive = {
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 3
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1
+        }
+    };
+   
     return (
         <div className='w-3/4 m-auto bg-white'>
             <div className='mt-20'>
-            <Slider {...settings}>
+            <Carousel
+                responsive={responsive}
+                swipeable={false}
+                draggable={false}
+                infinite={true}
+                autoPlay={false}
+                // autoPlaySpeed={3000}
+                keyBoardControl={true}
+                slidesToSlide={1}
+            >
                 {data.map((d) => (
-                    <div key={d.name} className='bg-white h-[450px] text-black rounded-xl'>
+                    <div key={d.name} className='bg-white h-[450px] text-black rounded-xl '>
                         <div className='h-56 bg-light-pink flex justify-center items-center rounded-t-xl'>
                             <img src={d.img} alt='' className='h-44 w-44 rounded-full'/>
                         </div>
@@ -92,7 +78,7 @@ function Crousal() {
                         </div>
                     </div>
                 ))}
-                </Slider>
+                </Carousel>
             </div>
         </div>
     );
