@@ -12,28 +12,29 @@ function StudentSection() {
                 <Navbar />
                 <div className="flex justify-center mt-10 ml-auto mr-24 mb-20 pb-8">
 
-
-                    <div className="ml-9 mt-[100px]">
-                        <p className="text-5xl font-bold leading-tight font-mono">Teach Online
-                        </p>
-                        <small className='text-lg ml-1'>Earn money on your schedule</small>
-                        <label htmlFor="Email" className="ml-2 block text-sm text-gray-900 mt-4">
-                            Email
-                        </label>
-                        <input className='w-full border p-3 rounded-md' type='email' placeholder='email'></input>
-                        <br />
-                        <label htmlFor="Password" className="ml-2 block text-sm text-gray-900 mt-4">
-                            Password
-                        </label>
-                        <input className='w-full border p-3 rounded-md' placeholder='password'></input>
-                        <br />
-                        <div className="flex-grow mt-4 flex justify-center">
-                            <button className="bg-black rounded-md p-3 flex items-center justify-center w-full">
-                                <span className='text-white text-xl'>Sign up with email</span>
-                                {/* <span className="ml-2 text-white text-xl"><GoArrowRight /></span> */}
-                            </button>
+                    <form action='#'>
+                        <div className="ml-9 mt-[100px]">
+                            <p className="text-5xl font-bold leading-tight font-mono">Teach Online
+                            </p>
+                            <small className='text-lg ml-1'>Earn money on your schedule</small>
+                            <label htmlFor="Email" className="ml-2 block text-sm text-gray-900 mt-4">
+                                Email
+                            </label>
+                            <input className='w-full border p-3 rounded-md' type='email' placeholder='Email'></input>
+                            <br />
+                            <label htmlFor="Password" className="ml-2 block text-sm text-gray-900 mt-4">
+                                Password
+                            </label>
+                            <input className='w-full border p-3 rounded-md' placeholder='Password' type='password'></input>
+                            <br />
+                            <div className="flex-grow mt-4 flex justify-center">
+                                <button className="bg-black rounded-md p-3 flex items-center justify-center w-full">
+                                    <span className='text-white text-xl'>Sign up with email</span>
+                                    {/* <span className="ml-2 text-white text-xl"><GoArrowRight /></span> */}
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                     <img src={img2} alt="Your Image" style={{ width: '35%' }} className="h-auto ml-52 rounded-md" />
 
                 </div>

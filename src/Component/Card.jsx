@@ -26,10 +26,10 @@ function Card() {
   ];
   return (
     <>
-        <div className='bg-white flex flex-row gap-4 mt-10 mb-1'>
+        <div className='bg-white flex flex-row gap-4 mt-10 mb-1' >
         {data.map((d) => (
-            <div key={d.no} className='border-2 rounded-md justify-center items-center w-[400px] '>
-                <div className='mt-7 ml-7'>
+            <div key={d.no} className='border-2 rounded-md justify-center items-center w-[400px]'>
+                <div className='mt-7 ml-7' > 
                 <span style={{ backgroundColor: d.color }} className={`font-bold text-start items-start px-2 text-3xl`}>{d.no}</span>
                 <h2 className='font-bold text-start items-start mt-7 text-3xl'>{d.quote}</h2>
                 <p className='text-start items-start mt-4 text-sm'>{d.review}</p>

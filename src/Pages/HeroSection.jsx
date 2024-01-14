@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import img1 from '../assets/Student.gif';
 import { GoArrowRight } from "react-icons/go";
 import Crousal from '../Component/Crousal';
@@ -7,7 +7,15 @@ import Navbar from './Navbar';
 import Footer from '../Component/Footer';
 import { Link } from 'react-router-dom'
 
+
+// aos
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 function HeroSection() {
+    useEffect(()=>{
+        AOS.init({duration:1200})
+    })
     return (
         <>
             <div className='bg-light-pink '>
@@ -30,7 +38,7 @@ function HeroSection() {
                 </div>
             </div>
             <div className='bg-white'>
-                <div className='pt-10'>
+                <div className='pt-10' data-aos="fade-up">
                     <h1 className='text-7xl font-bold flex items-center justify-center '>Find the right tutor for you.</h1>
                     <p className='flex items-center justify-center mt-10 pb-3 text-lg'>With over 30,000 tutors and 1M+ learners, we know language learning.</p>
                 </div>
@@ -38,17 +46,17 @@ function HeroSection() {
             </div>
 
             <div className='bg-white'>
-                <div className='ml-32 font-mono font-bold text-6xl transform-gpu-20s'>
+                <div className='ml-32 font-mono font-bold text-6xl transform-gpu-20s' data-aos="fade-up">
                     <h1>How Tutors4U Work:</h1>
                 </div>
-                <div className='flex flex-row m-32 gap-4 mt-8'>
+                <div className='flex flex-row m-32 gap-4 mt-8' data-aos="fade-right">
                     <Card />
                 </div>
 
             </div>
 
             <div className='bg-light-pink'>
-                <div className='justify-center text-center p-12'>
+                <div className='justify-center text-center p-20' data-aos="fade-up">
                     <p className='text-7xl mb-5 font-bold'>Lessons you’ll love. Guaranteed.</p>
                     <p className='text-lg '>Try another tutor for free if you’re not satisfied.</p>
                 </div>
