@@ -21,11 +21,11 @@ const teacherRegisterSchema = new mongoose.Schema(
         },
         LangaugeSpoken:{
             type: String,
-            required:true
+       
         },
         self_level:{
             type: String,
-            required:true
+          
         },
         subjectTaught:{
             type: String,
@@ -36,12 +36,12 @@ const teacherRegisterSchema = new mongoose.Schema(
             required:true,
         },
         description:{
-            type:Number,
+            type:String,
             
         },
         teacherProfile:{
-            type:String //cloudinary url se aayega
-
+            type:String, //cloudinary url se aayega
+            required:true,
         },
 
 
