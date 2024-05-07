@@ -1,15 +1,26 @@
-const express  = require('express');
+import express from "express";
 
 const app = express();
-const cors = require('cors');
+import cors from 'cors';
 
-require('dotenv').config();
+import dotenv from "dotenv"
+
+
+dotenv.config({
+    path: './.env'
+})
+
+
 const PORT = process.env.PORT || 4000;
 
 app.use(express.json());
-app.use(cors())
+app.use(cors(   {
+    origin:process.env.CORS_ORIGIN,
+    credentials:true
+}))
 
-const Routes = require('./Routes/rotes');
+// const Routes = require('./Routes/rotes');
+import Routes from './Routes/rotes.js'
 //mount the todo ASPI routes 
 app.use('/api/v1', Routes);
 
@@ -22,7 +33,8 @@ app.listen(PORT,() =>{
 })
 
 //connect to the database 
-const dbConnect = require('./config/database');
+import {dbConnect} from './config/database.js'
+// const dbConnect = require('./config/database');
 dbConnect();
 
 

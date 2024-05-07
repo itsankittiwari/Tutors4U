@@ -1,9 +1,11 @@
-const userData = require('../models/registration');
+import {Register} from '../models/registration.js'
 
-exports.LoginController = async(req,res) =>{
+// const userData = require('../models/registration');
+
+const LoginController = async(req,res) =>{
     const {email,password} =req.body;
 
-    const user = await userData.findOne({email:email});
+    const user = await Register.findOne({email:email});
 
     if(user){
          if(user.password === password){
@@ -17,3 +19,5 @@ exports.LoginController = async(req,res) =>{
         res.json("No Records Found")
     }
 }
+
+export {LoginController}

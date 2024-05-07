@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 const teacherRegisterSchema = new mongoose.Schema(
     {
@@ -40,7 +40,7 @@ const teacherRegisterSchema = new mongoose.Schema(
             
         },
         teacherProfile:{
-            type:String, //cloudinary url se aayega
+            type:String ,// url cloudinary se aayega
             required:true,
         },
 

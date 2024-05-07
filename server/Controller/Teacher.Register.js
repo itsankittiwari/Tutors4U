@@ -1,9 +1,10 @@
 import { TeacherRegister } from '../models/TeacherRegister.model.js'
 import { ApiError } from '../utils/ApiError.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
+import { uploadOnCloudinary } from '../utils/cloudinary.js';
 
 
-exports.userRegister = async (req, res) => {
+const TutorRegisteration = async (req, res) => {
     // gets user details from frontend 
     // validation  _ not empty
     // check if user already exists: username, email
@@ -32,11 +33,13 @@ exports.userRegister = async (req, res) => {
     const teacherProfileImgPath = req.files?.teacherProfile[0]?.path;
 
     if (!teacherProfileImgPath) {
-        throw new ApiError(400, "Avatar file is required")
+        throw new ApiError(400, "profileImage file is required")
     }
 
     // upload them to cloudinary , avatar 
     const avatar = await uploadOnCloudinary(teacherProfileImgPath)
+    console.log(avatar)
+   
 
     if (!avatar) {
         throw new ApiError(400, "Avatar file is required")
@@ -52,7 +55,7 @@ exports.userRegister = async (req, res) => {
         self_level,
         subjectTaught,
         contact,
-        description,
+        description ,
         teacherProfile: avatar.url
     });
 
@@ -61,3 +64,6 @@ exports.userRegister = async (req, res) => {
     new ApiResponse(200, response, "User registered Successfully")
 )
 }
+
+
+export {TutorRegisteration}

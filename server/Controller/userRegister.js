@@ -1,11 +1,12 @@
-const users_data = require('../models/registration');
+import {Register} from '../models/registration.js'
+// const Register = require('../models/registration');
 
 
-exports.userRegister = async(req,res) =>{
+const userRegister = async(req,res) =>{
     try{
         const {first_name,last_name,email,password,confirm_password} = req.body;
 
-        const response = await users_data.create({first_name,last_name,email,password,confirm_password});
+        const response = await Register.create({first_name,last_name,email,password,confirm_password});
 
         res.status(200).json({
             success:true,
@@ -24,3 +25,5 @@ exports.userRegister = async(req,res) =>{
         })
     }
 }
+
+export {userRegister}
