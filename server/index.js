@@ -6,9 +6,10 @@ import cors from 'cors';
 import dotenv from "dotenv"
 
 
-dotenv.config({
-    path: './.env'
-})
+// dotenv.config({
+//     path: './.env'
+// })
+dotenv.config();
 
 
 const PORT = process.env.PORT || 4000;
