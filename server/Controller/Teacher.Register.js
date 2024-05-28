@@ -30,19 +30,19 @@ const TutorRegisteration = async (req, res) => {
     }
 
     //multer gives the file access like express give us req.body 
-    const teacherProfileImgPath = req.files?.teacherProfile[0]?.path;
+    console.log(req.files)
+    console.log(req.file)
+    const teacherProfileImgPath = req.files?.teacherProfile?.[0]?.path;
+    console.log(teacherProfileImgPath)
 
     if (!teacherProfileImgPath) {
         throw new ApiError(400, "profileImage file is required")
     }
 
-    // upload them to cloudinary , avatar 
-    const avatar = await uploadOnCloudinary(teacherProfileImgPath)
-    console.log(avatar)
-   
-
-    if (!avatar) {
-        throw new ApiError(400, "Avatar file is required")
+    // upload them to cloudinary
+    const avatar = await uploadOnCloudinary(teacherProfileImgPath);
+    if (!avatar || !avatar.url) {
+        throw new ApiError(400, "Failed to upload avatar to Cloudinary");
     }
 
 
