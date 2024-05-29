@@ -4,6 +4,7 @@ import img2 from '../assets/hero.webp';
 import { GoArrowRight } from "react-icons/go";
 import Navbar from './Navbar';
 import Footer from '../Component/Footer';
+import { Link } from 'react-router-dom';
 
 function StudentSection() {
     return (
@@ -37,7 +38,7 @@ function StudentSection() {
                             <hr />
                             <br />
                             <button className="bg-black rounded-md p-3 flex items-center justify-center w-full">
-                                <span className='text-white text-xl'>Registration For New User</span>
+                                <span className='text-white text-xl'><Link to='/TeacherRegister'>Registration For New User</Link></span>
                                 {/* <span className="ml-2 text-white text-xl"><GoArrowRight /></span> */}
                             </button>
                         </div>

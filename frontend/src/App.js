@@ -7,6 +7,7 @@ import Login from './Component/Login';
 import ContactUs from './Pages/ContactUs';
 import Signup from './Component/Signup';
 import StudentNav from './student/Student-Nav';
+import TeacherRegister from './Pages/TeacherRegister';
 function App() {
   return (
     <>
@@ -21,6 +22,7 @@ function App() {
           <Route path='/contact_us' element={<ContactUs/>}/>
           <Route path='/sign_up' element={<Signup/>}/>
           <Route path="/student/home" Component={StudentNav} />
+          <Route path='/TeacherRegister' element={<TeacherRegister/>}/>
         </Routes>
       </BrowserRouter>
     </>
